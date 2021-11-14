@@ -1,0 +1,72 @@
+.player {
+    background-color: var(--light);
+    padding: 20px;
+    text-align: left;
+}
+
+.turn {
+    background-color: var(--selection);
+}
+
+.player .heading {
+    text-align: left;
+    font-size: 20pt;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.guessbox {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: left;
+    display:inline-block;
+    border-radius: 5px;
+}
+
+.guessbox span:last-child {
+    border-right: none;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.guessbox span:first-child {
+    border-right: none;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.numberbox {
+    --number-border: white;
+    text-align: left;
+    display:inline-block;
+    border-radius: 5px;
+    background-color: white;
+}
+
+.numberbox span:first-child {
+    border-left: none;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+}
+.numberbox span:last-child {
+    border-left: none;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.number {
+    display: inline-block;
+    width: 25px;
+    text-align: center;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.number:hover {
+    background-color: var(--light);
+    cursor: pointer;
+}
+
+.number[data-selected="true"] {
+    background-color: var(--highlight);
+}
