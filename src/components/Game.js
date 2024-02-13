@@ -224,7 +224,8 @@ export const Game = props => {
             <button onClick={() => setRound(0)} disabled={players.length < 2}>Start</button>
         </> : <Header game={{rounds: rounds, round: round, phase: phase, turn: turn}}/>}
         <div className={styles.playersList}>
-            {players.map(p => <Player player={p}
+            {players.map((p, index) => <Player key={index}
+                                      player={p}
                                       points={calculatePlayerPoints(p)}
                                       addToNextGuess={addToNextGuess}
                                       addToNextResult={addToNextResult}
@@ -248,7 +249,7 @@ const Header = props => {
                 <span>{props.game.rounds[props.game.round]} {props.game.rounds[props.game.round] > 1 ? "Karten" : "Karte"}</span>
         </div>
         <div className={styles.gameProgress}>
-            {props.game.rounds.map((r, round) => <span data-past={props.game.round > round}
+            {props.game.rounds.map((r, round) => <span key={round} data-past={props.game.round > round}
                                                        data-current={props.game.round == round}>{r}</span>)}
         </div>
     </div> : <div className={styles.gameHeader}>Game Over.</div>

@@ -41,6 +41,6 @@ export const Player = props => {
             <span>{props.player.name} <span className={styles.numberbox}>{createButtons()}</span>{/*<button onClick={() => onChangeNumber(1)}>+</button><button onClick={() => onChangeNumber(-1)}>-</button>*/}</span>
             <span>{props.points} Pkt</span>
         </div>
-        <div className={styles.guessbox}>{props.game.rounds.map((r, index) => <Guess guess={getGuess(index)} result={getResult(index)} round={index} currentRound={props.game.round}/>)}</div>
+        <div className={styles.guessbox}>{props.game.rounds.map((r, index) => <Guess key={index} guess={getGuess(index)} result={getResult(index)} round={index} currentRound={props.game.round}/>)}</div>
     </div>
 }
